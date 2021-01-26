@@ -100,13 +100,6 @@ function finalScore(inningCB, innplayed){
     score.Home += inningCB();
     score.Away += inningCB(); 
   }
-
-  // if(score.home === score.away)
-  // {
-  //   finalGame.push(`This game will require extra innings: Away ${score.away}  Home ${score.home}`);
-  // }else{
-  //   finalGame.push(`Inning ${i + 1} Away: ${score.away}, Home: ${score.home}`);
-  // }
   return score;
 }
 console.log(finalScore(inning, 9));
@@ -116,14 +109,19 @@ Use the getInningScore() function below to do the following:
   1. Receive a callback function - you will pass in the inning function from task 2 as your argument 
   2. Return an object with a score for home and a score for away that populates from invoking the inning callback function */
 
-function getInningScore(inningsCB) {
+function getInningScore(inningCB){
   /*Your Code Here */
-  let HomeScore = 0;
-  let AwayScore = 0;
+  let score = {
+    "Home": 0, "Away": 0
+  }
 
+  score.Home += inningCB();
+  score.Away += inningCB();
 
-  return 
+  return score;
 }
+
+console.log(getInningScore(inning));
 
 
 /* ⚾️⚾️⚾️ Task 5: scoreboard() ⚾️⚾️⚾️
@@ -167,8 +165,18 @@ Use the scoreboard function below to do the following:
 ]  
   */
 
-function scoreboard(/* CODE HERE */) {
+function scoreboard(getInningScore, inning, numInning) {
   /* CODE HERE */
+  let result = [];
+  let awayScore = 0;
+  let homeScore = 0;
+
+  for(let i = 0; i < numInning; i++){
+    result.push(`Inning ${i}: Amway ${inning} - Home ${inning}`);
+  }
+  if(awayScore === homeScore){
+
+  }
 }
 
 
